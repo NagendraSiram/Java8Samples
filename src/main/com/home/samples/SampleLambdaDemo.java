@@ -1,16 +1,17 @@
-package com.home.project;
+package com.home.samples;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
+import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
  * Created by Nagendra on 15/03/2016.
  */
-public class SampleLamdaDemo {
+public class SampleLambdaDemo {
 
     public static void main(String st[]) {
         List<Person> personList = new ArrayList<>();
@@ -81,6 +82,15 @@ public class SampleLamdaDemo {
                 .count();
         System.out.println("Count:" + count);
 
+        //Composing functions
+        BiFunction<Gender, List<Person>, List<Person>> filterByGender = (sex, list) -> list.stream()
+                .filter(p -> p.getSex().equals(sex))
+                .collect(Collectors.toList());
+
+        Function<List<Person>, Optional<Person>> first = list -> list.stream().findFirst();
+
+        System.out.println(filterByGender.apply(Gender.MALE, personList));
+        System.out.println(filterByGender.andThen(first).apply(Gender.MALE, personList));
     }
 }
 
@@ -118,6 +128,16 @@ class Person {
 
     public void addAddress(Address address) {
         addresses.add(address);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                ", addresses=" + addresses +
+                '}';
     }
 }
 

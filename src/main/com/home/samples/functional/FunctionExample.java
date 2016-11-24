@@ -2,9 +2,11 @@ package com.home.samples.functional;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Created by nagendra on 22/11/2016.
@@ -43,6 +45,18 @@ public class FunctionExample {
 
         System.out.println(filter.apply(2, numbers));
         System.out.println(filter.apply(3, numbers));
+
+        //Eg:6 - example for ::
+        Function<Integer, Integer> abs = a -> Math.abs(a);
+        //(or)
+        Function<Integer, Integer> abs2 = Math::abs;
+
+        IntStream.range(0, 10).forEach(i -> System.out.println(i));
+        //(or)
+        IntStream.range(0, 10).forEach(System.out::print);
+
+
+
 
     }
 }

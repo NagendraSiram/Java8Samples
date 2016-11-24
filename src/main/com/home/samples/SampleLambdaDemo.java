@@ -1,5 +1,9 @@
 package com.home.samples;
 
+import com.home.samples.domain.Address;
+import com.home.samples.domain.Gender;
+import com.home.samples.domain.Person;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -94,73 +98,3 @@ public class SampleLambdaDemo {
     }
 }
 
-class Person {
-
-    private String name;
-
-    private int age;
-
-    private Gender sex;
-
-    private List<Address> addresses = new ArrayList<>();
-
-    public Person(String name, int age, Gender sex) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public Gender getSex() {
-        return sex;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void addAddress(Address address) {
-        addresses.add(address);
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", sex=" + sex +
-                ", addresses=" + addresses +
-                '}';
-    }
-}
-
-class Address {
-
-    private String line1;
-
-    private String postCode;
-
-    public Address(String line1, String postCode) {
-        this.line1 = line1;
-        this.postCode = postCode;
-    }
-
-    public String getLine1() {
-        return line1;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-}
-
-enum Gender {
-    MALE, FEMALE
-}

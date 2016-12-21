@@ -17,7 +17,7 @@ public class OtherExample {
     public static void main(String[] args) {
 //        _1(); // Streams are lazy
 //        _2(); //To avoid Streams with null pointer exceptions
-        _3();
+        _3();// To find duplicates and throw exception
     }
 
     static void _3() {

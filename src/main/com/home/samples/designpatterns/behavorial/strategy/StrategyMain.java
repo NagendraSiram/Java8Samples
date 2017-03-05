@@ -1,4 +1,4 @@
-package com.home.samples.designpatterns.strategy;
+package com.home.samples.designpatterns.behavorial.strategy;
 
 /**
  * Behavioural Pattern

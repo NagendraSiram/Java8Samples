@@ -1,4 +1,4 @@
-package com.home.samples.designpatterns.adapter;
+package com.home.samples.designpatterns.structural.adapter;
 
 /**
  * Created by nagendra on 21/12/2016.

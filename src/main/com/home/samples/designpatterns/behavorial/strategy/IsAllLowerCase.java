@@ -1,4 +1,4 @@
-package com.home.samples.designpatterns.strategy;
+package com.home.samples.designpatterns.behavorial.strategy;
 
 /**
  * Created by nagendra on 14/12/2016.

@@ -1,4 +1,4 @@
-package com.home.samples.designpatterns.adapter;
+package com.home.samples.designpatterns.structural.adapter;
 
 /**
  * Structural Pattern
